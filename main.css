@@ -1,35 +1,48 @@
-*{
+* {
   font-family: 'Allerta Stencil', sans-serif;
   color: white
 }
-body{
+
+body {
   background-image: url(images/mtb2.jpg);
   background-size: cover;
 }
-.locator{
+
+.locator {
   text-align: center;
 }
-.head{
+
+.head {
   background: rgba(0, 0, 0, 0.0);
   color: white;
 }
-.drop_menu{
+
+.drop_menu {
   display: flex;
   justify-content: center;
   height: 100px;
 }
-.map_area{
+
+.map_area {
   height: 500px;
 }
-button{
+
+button {
   background-color: black;
 }
-footer{
+
+footer {
   background: rgba(0, 0, 0, 0.0);
   color: white;
   height: 50px;
 }
+
 #map {
-        height: 400px;
-        width: 100%;
-       }
+  height: 300px;
+  width: 50%;
+}
+.map_area{
+  margin: 100px;
+  display: flex;
+  justify-content: center;
+}

@@ -3,10 +3,13 @@ $(document).ready(function() {
 
    $.get('https://maps.googleapis.com/maps/api/geocode/json?address=Denver&key=AIzaSyBu39EW2ha5zCYSHB6GefXJklnw4-9RdSs', function(data) {
       console.log(data);
+      //console.log(data.results["0"].geometry.location.lat);
+      //console.log(data.results["0"].geometry.location.lng);
+      var lat = data.results["0"].geometry.location.lat;
+        console.log(lat);
+      var lng = data.results["0"].geometry.location.lng;
+        console.log(lng);
     });
-
-
-
 
 
 
@@ -20,8 +23,8 @@ var service;
 var infowindow;
 
 function initMap() {
-  var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
-
+  var pyrmont = new google.maps.LatLng(39.761849,-104.880625);
+   //var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
   map = new google.maps.Map(document.getElementById('map'), {
       center: pyrmont,
       zoom: 15
@@ -30,7 +33,7 @@ function initMap() {
   var request = {
     location: pyrmont,
     radius: '500',
-    query: 'bike shops'
+    query: 'bike'
   };
 
   service = new google.maps.places.PlacesService(map);
