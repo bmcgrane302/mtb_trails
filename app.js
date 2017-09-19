@@ -1,43 +1,48 @@
 console.log("test");
 $(document).ready(function() {
 
-   $.get('https://maps.googleapis.com/maps/api/geocode/json?address=Denver&key=AIzaSyBu39EW2ha5zCYSHB6GefXJklnw4-9RdSs', function(data) {
-      console.log(data);
-      //console.log(data.results["0"].geometry.location.lat);
-      //console.log(data.results["0"].geometry.location.lng);
-      var lat = data.results["0"].geometry.location.lat;
-        console.log(lat);
-      var lng = data.results["0"].geometry.location.lng;
-        console.log(lng);
-    });
 
 
 
 
+});//
 
-});
-
+$('button').click(e => {
+  e.preventDefault()
+  initMap()
+})
 
 var map;
 var service;
 var infowindow;
 
 function initMap() {
-  var pyrmont = new google.maps.LatLng(39.761849,-104.880625);
-   //var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
-  map = new google.maps.Map(document.getElementById('map'), {
-      center: pyrmont,
-      zoom: 15
-    });
+  $.get('https://maps.googleapis.com/maps/api/geocode/json?address=Denver+colorado&key=AIzaSyBu39EW2ha5zCYSHB6GefXJklnw4-9RdSs', function(data) {
+     console.log(data);
+     //console.log(data.results["0"].geometry.location.lat);
+     //console.log(data.results["0"].geometry.location.lng);
+     var lat = data.results["0"].geometry.location.lat;
+       console.log(lat);
+     var lng = data.results["0"].geometry.location.lng;
+       console.log(lng);
 
-  var request = {
-    location: pyrmont,
-    radius: '500',
-    query: 'bike'
-  };
+       var pyrmont = new google.maps.LatLng(lat, lng);
+       //var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
+       map = new google.maps.Map(document.getElementById('map'), {
+         center: pyrmont,
+         zoom: 15
+       });
 
-  service = new google.maps.places.PlacesService(map);
-  service.textSearch(request, callback);
+       var request = {
+         location: pyrmont,
+         radius: '500',
+         query: 'bike'
+       };
+
+       service = new google.maps.places.PlacesService(map);
+       service.textSearch(request, callback);
+   });
+
 }
 
 function callback(results, status) {
