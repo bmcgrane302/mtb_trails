@@ -2,14 +2,15 @@ console.log("test");
 $(document).ready(function() {
 
 
-
-
-
 });//
+//  let searchB = document.getElementById('search');
+// let userInput = document.getElementById('state').val;
+// console.log(userInput);
+//
 
 $('button').click(e => {
-  e.preventDefault()
-  initMap()
+  e.preventDefault();
+  initMap();
 })
 
 var map;
@@ -17,8 +18,16 @@ var service;
 var infowindow;
 
 function initMap() {
-  $.get('https://maps.googleapis.com/maps/api/geocode/json?address=Denver+colorado&key=AIzaSyBu39EW2ha5zCYSHB6GefXJklnw4-9RdSs', function(data) {
+  let userInput = document.getElementById('state').value;
+  let userInput2 = document.getElementById('city').value;
+  console.log(userInput);
+  console.log(userInput2);
+
+  $.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${userInput2}+${userInput}&key=AIzaSyBu39EW2ha5zCYSHB6GefXJklnw4-9RdSs`, function(data) {
      console.log(data);
+     //let searchB = document.getElementById('search');
+
+
      //console.log(data.results["0"].geometry.location.lat);
      //console.log(data.results["0"].geometry.location.lng);
      var lat = data.results["0"].geometry.location.lat;
