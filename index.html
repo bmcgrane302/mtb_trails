@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="main.css">
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src='./app.js'></script>
+
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACc8G1DfKQ22hXQTxM8AuJWLDbmZb2Ijo&libraries=places&callback=initMap">
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Avenir' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
+  <title>MTB TRAILS</title>
+</head>
+
+<body>
+  <nav class="head">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center logo">MTB TRAILS</a>
+    </div>
+  </nav>
+  <div class="locator">
+    <h5>LOCATE TRAIL</h5>
+  </div>
+  <div class="container drop_menu">
+    <form >
+     <input type="text" name="state" placeholder="ENTER STATE HERE">
+     <input type="text" name="city" placeholder="ENTER CITY HERE">
+
+      <button type="submit" name="submitButton">Submit</button>
+     </form>
+  </div>
+  <main class="map_area">
+    <div id="map"></div>
+
+  </main>
+  <footer>
+    <div class="footer-copyright">
+      © 2017 BRIAN MC GRANE
+    </div>
+  </footer>
+
+</body>
+
+</html>

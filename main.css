@@ -1,0 +1,35 @@
+*{
+  font-family: 'Allerta Stencil', sans-serif;
+  color: white
+}
+body{
+  background-image: url(images/mtb2.jpg);
+  background-size: cover;
+}
+.locator{
+  text-align: center;
+}
+.head{
+  background: rgba(0, 0, 0, 0.0);
+  color: white;
+}
+.drop_menu{
+  display: flex;
+  justify-content: center;
+  height: 100px;
+}
+.map_area{
+  height: 500px;
+}
+button{
+  background-color: black;
+}
+footer{
+  background: rgba(0, 0, 0, 0.0);
+  color: white;
+  height: 50px;
+}
+#map {
+        height: 400px;
+        width: 100%;
+       }
