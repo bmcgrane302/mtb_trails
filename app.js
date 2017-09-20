@@ -68,8 +68,8 @@ function createMarkers(places) {
       position: place.geometry.location
 
     });
-    console.log(place.name);
-    var content = place.name;
+     console.log(place.name);
+     let content = place.name;
     marker.addListener('click', function() {
              infowindow.setContent(content);
              infowindow.open(map, this);
