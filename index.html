@@ -7,8 +7,7 @@
 
   <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACc8G1DfKQ22hXQTxM8AuJWLDbmZb2Ijo&libraries=places">
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACc8G1DfKQ22hXQTxM8AuJWLDbmZb2Ijo&libraries=places">
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
@@ -27,12 +26,13 @@
     <h5>LOCATE TRAIL</h5>
   </div>
   <div class="container drop_menu">
-    <form >
-     <input id="state" type="text" name="state" placeholder="ENTER STATE HERE">
-     <input id="city" type="text" name="city" placeholder="ENTER CITY HERE">
+    <form>
+      <input id="city" type="text" name="city" placeholder="ENTER CITY HERE">
+      <input id="state" type="text" name="state" placeholder="ENTER STATE HERE">
+
 
       <button id="search" type="submit" name="submitButton">Submit</button>
-     </form>
+    </form>
   </div>
   <main class="map_area">
     <div id="map"></div>

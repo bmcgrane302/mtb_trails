@@ -1,8 +1,10 @@
 * {
   font-family: 'Allerta Stencil', sans-serif;
-  color: white
+  color: black;
 }
-
+h5{
+  color: white;
+}
 body {
   background-image: url(images/mtb2.jpg);
   background-size: cover;
@@ -22,21 +24,26 @@ body {
   justify-content: center;
   height: 100px;
 }
-
 .map_area {
   height: 500px;
 }
-
 button {
   background-color: black;
 }
-
+#search{
+  color: white;
+}
+#city{
+  color: white;
+}
+#state{
+  color: white;
+}
 footer {
   background: rgba(0, 0, 0, 0.0);
   color: white;
   height: 50px;
 }
-
 #map {
   height: 300px;
   width: 50%;

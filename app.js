@@ -1,12 +1,6 @@
 console.log("test");
 $(document).ready(function() {
-
-
-});//
-//  let searchB = document.getElementById('search');
-// let userInput = document.getElementById('state').val;
-// console.log(userInput);
-//
+});
 
 $('button').click(e => {
   e.preventDefault();
@@ -24,34 +18,28 @@ function initMap() {
   console.log(userInput2);
 
   $.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${userInput2}+${userInput}&key=AIzaSyBu39EW2ha5zCYSHB6GefXJklnw4-9RdSs`, function(data) {
-     console.log(data);
-     //let searchB = document.getElementById('search');
+    console.log(data);
 
+    var lat = data.results["0"].geometry.location.lat;
+    console.log(lat);
+    var lng = data.results["0"].geometry.location.lng;
+    console.log(lng);
 
-     //console.log(data.results["0"].geometry.location.lat);
-     //console.log(data.results["0"].geometry.location.lng);
-     var lat = data.results["0"].geometry.location.lat;
-       console.log(lat);
-     var lng = data.results["0"].geometry.location.lng;
-       console.log(lng);
+    var pyrmont = new google.maps.LatLng(lat, lng);
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: pyrmont,
+      zoom: 15
+    });
 
-       var pyrmont = new google.maps.LatLng(lat, lng);
-       //var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
-       map = new google.maps.Map(document.getElementById('map'), {
-         center: pyrmont,
-         zoom: 15
-       });
-
-       var request = {
-         location: pyrmont,
-         radius: '500',
-         query: 'bike'
-       };
-
-       service = new google.maps.places.PlacesService(map);
-       service.textSearch(request, callback);
-   });
-
+    var request = {
+      location: pyrmont,
+      radius: '10000',
+      query: 'bike'
+    };
+    infowindow = new google.maps.InfoWindow();
+    service = new google.maps.places.PlacesService(map);
+    service.textSearch(request, callback);
+  });
 }
 
 function callback(results, status) {
@@ -62,7 +50,7 @@ function callback(results, status) {
 
 function createMarkers(places) {
   var bounds = new google.maps.LatLngBounds();
-  // var placesList = document.getElementById('places');
+   //var placesList = document.getElementById('places');
 
   for (var i = 0, place; place = places[i]; i++) {
     var image = {
@@ -78,11 +66,18 @@ function createMarkers(places) {
       icon: image,
       title: place.name,
       position: place.geometry.location
-    });
 
-    // placesList.innerHTML += '<li>' + place.name + '</li>';
+    });
+    console.log(place.name);
+    var content = place.name;
+    marker.addListener('click', function() {
+             infowindow.setContent(content);
+             infowindow.open(map, this);
+           });
+     //placesList.innerHTML += '<li>' + place.name + '</li>';
 
     bounds.extend(place.geometry.location);
   }
+
   map.fitBounds(bounds);
 }
