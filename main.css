@@ -31,7 +31,8 @@ button {
   background-color: black;
 }
 #search{
-  color: white;
+  color: black;
+  background: rgba(0, 0, 0, 0.0)
 }
 #city{
   color: white;
@@ -45,8 +46,8 @@ footer {
   height: 50px;
 }
 #map {
-  height: 400px;
-  width: 60%;
+  height: 500px;
+  width: 80%;
 }
 .map_area{
   margin: 100px;

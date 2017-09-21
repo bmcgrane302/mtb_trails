@@ -1,5 +1,6 @@
 console.log("test");
 $(document).ready(function() {
+  
 });
 
 $('button').click(e => {
@@ -28,12 +29,14 @@ function initMap() {
     var pyrmont = new google.maps.LatLng(lat, lng);
     map = new google.maps.Map(document.getElementById('map'), {
       center: pyrmont,
-      zoom: 15
+      zoom: 7
     });
+    var bikeLayer = new google.maps.BicyclingLayer();
+  bikeLayer.setMap(map);
 
     var request = {
       location: pyrmont,
-      radius: '10000',
+      radius: '9000',
       query: 'bike'
     };
     infowindow = new google.maps.InfoWindow();
@@ -68,8 +71,8 @@ function createMarkers(places) {
       position: place.geometry.location
 
     });
-     console.log(place.name);
-     let content = place.name;
+     //console.log(url);
+     let content = place.name + ", " + place.formatted_address;
     marker.addListener('click', function() {
              infowindow.setContent(content);
              infowindow.open(map, this);
