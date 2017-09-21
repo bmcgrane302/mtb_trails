@@ -25,14 +25,15 @@ body {
   height: 100px;
 }
 .map_area {
-  height: 500px;
+  height: 540px;
+
 }
 button {
   background-color: black;
 }
 #search{
-  color: black;
-  background: rgba(0, 0, 0, 0.0)
+  color: white;
+  background: rgba(0, 0, 0, 0.0);
 }
 #city{
   color: white;
@@ -46,11 +47,24 @@ footer {
   height: 50px;
 }
 #map {
-  height: 500px;
-  width: 80%;
+  height: 520px;
+  width: 70%;
+}
+#shop_list{
+  height: 520px;
+  width: 30%;
 }
 .map_area{
   margin: 100px;
   display: flex;
   justify-content: center;
+}
+#copy{
+  color: white;
+  padding-left: 10vw;
+}
+
+p{
+  font-size: 10px;
+    color: white;
 }

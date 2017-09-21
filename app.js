@@ -1,6 +1,6 @@
 console.log("test");
 $(document).ready(function() {
-  
+
 });
 
 $('button').click(e => {
@@ -71,8 +71,12 @@ function createMarkers(places) {
       position: place.geometry.location
 
     });
+    let div = document.getElementById('shop_list');
+    let par = document.createElement('p');
+    par.innerHTML = place.name;
+    div.append(par);
      //console.log(url);
-     let content = place.name + ", " + place.formatted_address;
+    let content = place.name + ", " + place.formatted_address;
     marker.addListener('click', function() {
              infowindow.setContent(content);
              infowindow.open(map, this);
