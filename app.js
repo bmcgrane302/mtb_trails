@@ -36,6 +36,8 @@ function initMap() {
     });
     var bikeLayer = new google.maps.BicyclingLayer();
   bikeLayer.setMap(map);
+    var trafficLayer = new google.maps.TrafficLayer();
+      trafficLayer.setMap(map);
 
     var request = {
       location: pyrmont,
@@ -69,6 +71,7 @@ function createMarkers(places) {
 
     var marker = new google.maps.Marker({
       map: map,
+      animation: google.maps.Animation.DROP,
       icon: image,
       title: place.name,
       position: place.geometry.location
@@ -79,7 +82,7 @@ function createMarkers(places) {
     par.innerHTML = place.name+ ", " + place.formatted_address;
     div.append(par);
 
-     //console.log(url);
+     //console.log(fomated_phone_number);
     let content = place.name + ", " + place.formatted_address;
     marker.addListener('click', function() {
              infowindow.setContent(content);

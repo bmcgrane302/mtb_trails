@@ -71,6 +71,10 @@ footer {
 }
 
 p{
-  font-size: 16px;
+  font-size: 14px;
     color: white;
+}
+form{
+  margin-left: 20%;
+  margin-right: 20%;
 }
