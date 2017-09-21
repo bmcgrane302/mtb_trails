@@ -6,8 +6,11 @@ $(document).ready(function() {
 $('button').click(e => {
   e.preventDefault();
   initMap();
+  //$(shop_list).empty();
 })
-
+$(search).click(function(){
+       $(shop_list).empty();
+     });
 var map;
 var service;
 var infowindow;
@@ -17,7 +20,7 @@ function initMap() {
   let userInput2 = document.getElementById('city').value;
   console.log(userInput);
   console.log(userInput2);
-
+  $(shop_list).css('background-color', 'rgba(35,35,35, 0.7)');
   $.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${userInput2}+${userInput}&key=AIzaSyBu39EW2ha5zCYSHB6GefXJklnw4-9RdSs`, function(data) {
     console.log(data);
 
@@ -73,13 +76,15 @@ function createMarkers(places) {
     });
     let div = document.getElementById('shop_list');
     let par = document.createElement('p');
-    par.innerHTML = place.name;
+    par.innerHTML = place.name+ ", " + place.formatted_address;
     div.append(par);
+
      //console.log(url);
     let content = place.name + ", " + place.formatted_address;
     marker.addListener('click', function() {
              infowindow.setContent(content);
              infowindow.open(map, this);
+
            });
      //placesList.innerHTML += '<li>' + place.name + '</li>';
 

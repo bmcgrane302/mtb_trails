@@ -38,3 +38,11 @@ function createMarker(place){
     position: place.geometry.location
   });
 }
+
+
+
+
+
+$(button).click(function(){
+       $('shop_list').empty();
+     })

@@ -9,7 +9,9 @@ body {
   background-image: url(images/mtb2.jpg);
   background-size: cover;
 }
-
+#logo{
+  font-size: 40px;
+}
 .locator {
   text-align: center;
 }
@@ -25,7 +27,7 @@ body {
   height: 100px;
 }
 .map_area {
-  height: 540px;
+  height: 560px;
 
 }
 button {
@@ -33,7 +35,9 @@ button {
 }
 #search{
   color: white;
-  background: rgba(0, 0, 0, 0.0);
+  background: rgba(35,35,35, 0.2);
+  border: none;
+  margin-left: 26%;
 }
 #city{
   color: white;
@@ -47,17 +51,19 @@ footer {
   height: 50px;
 }
 #map {
-  height: 520px;
-  width: 70%;
+  height: 560px;
+  width: 60%;
 }
 #shop_list{
-  height: 520px;
-  width: 30%;
+  height: 560px;
+  width: 40%;
+  overflow-x: scroll;
 }
 .map_area{
   margin: 100px;
   display: flex;
   justify-content: center;
+  border: 5px solid rgba(0, 0, 0, 0.0);
 }
 #copy{
   color: white;
@@ -65,6 +71,6 @@ footer {
 }
 
 p{
-  font-size: 10px;
+  font-size: 16px;
     color: white;
 }
