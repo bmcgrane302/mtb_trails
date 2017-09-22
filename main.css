@@ -12,6 +12,7 @@ body {
 }
 #logo{
   font-size: 40px;
+  white-space: nowrap;
 }
 .locator {
   text-align: center;
@@ -54,11 +55,13 @@ footer {
 #map {
   height: 560px;
   width: 60%;
+  min-width: 400px;
 }
 #shop_list{
   height: 560px;
   width: 40%;
   overflow-x: scroll;
+  min-width: 300px;
 }
 .map_area{
   margin: 100px;
