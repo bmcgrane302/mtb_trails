@@ -6,11 +6,10 @@ $(document).ready(function() {
 $('button').click(e => {
   e.preventDefault();
   initMap();
-  //$(shop_list).empty();
 })
-$(search).click(function(){
-       $(shop_list).empty();
-     });
+$(search).click(function() {
+  $(shop_list).empty();
+});
 var map;
 var service;
 var infowindow;
@@ -35,9 +34,9 @@ function initMap() {
       zoom: 7
     });
     var bikeLayer = new google.maps.BicyclingLayer();
-  bikeLayer.setMap(map);
+    bikeLayer.setMap(map);
     var trafficLayer = new google.maps.TrafficLayer();
-      trafficLayer.setMap(map);
+    trafficLayer.setMap(map);
 
     var request = {
       location: pyrmont,
@@ -58,7 +57,7 @@ function callback(results, status) {
 
 function createMarkers(places) {
   var bounds = new google.maps.LatLngBounds();
-   //var placesList = document.getElementById('places');
+  //var placesList = document.getElementById('places');
 
   for (var i = 0, place; place = places[i]; i++) {
     var image = {
@@ -72,24 +71,24 @@ function createMarkers(places) {
     var marker = new google.maps.Marker({
       map: map,
       animation: google.maps.Animation.DROP,
-      icon: image,
+      //icon: image,
       title: place.name,
       position: place.geometry.location
 
     });
     let div = document.getElementById('shop_list');
     let par = document.createElement('p');
-    par.innerHTML = place.name+ ", " + place.formatted_address;
+    par.innerHTML = place.name + ", " + place.formatted_address;
     div.append(par);
 
-     //console.log(fomated_phone_number);
+    //console.log(place.reviews);
     let content = place.name + ", " + place.formatted_address;
     marker.addListener('click', function() {
-             infowindow.setContent(content);
-             infowindow.open(map, this);
+      infowindow.setContent(content);
+      infowindow.open(map, this);
 
-           });
-     //placesList.innerHTML += '<li>' + place.name + '</li>';
+    });
+    //placesList.innerHTML += '<li>' + place.name + '</li>';
 
     bounds.extend(place.geometry.location);
   }
