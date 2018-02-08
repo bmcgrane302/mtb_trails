@@ -3,6 +3,9 @@ $(document).ready(function() {
 
 });
 
+let div = document.getElementById('shop_list');
+let ol = document.createElement('ol');
+
 $('button').click(e => {
   e.preventDefault();
   initMap();
@@ -76,10 +79,12 @@ function createMarkers(places) {
       position: place.geometry.location
 
     });
-    let div = document.getElementById('shop_list');
-    let par = document.createElement('p');
-    par.innerHTML = place.name + ", " + place.formatted_address;
-    div.append(par);
+
+
+    // let div = document.getElementById('shop_list');
+    // let par = document.createElement('p');
+    // par.innerHTML = place.name + ", " + place.formatted_address;
+    // div.append(par);
 
     //console.log(place.reviews);
     let content = place.name + ", " + place.formatted_address;
@@ -90,8 +95,13 @@ function createMarkers(places) {
     });
     //placesList.innerHTML += '<li>' + place.name + '</li>';
 
+    let li = document.createElement('li');
+    li.innerHTML = place.name + ", "+ place.formatted_address;
+    ol.append(li);
+    div.append(ol);
     bounds.extend(place.geometry.location);
   }
+
 
   map.fitBounds(bounds);
 }
